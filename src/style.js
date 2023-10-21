@@ -17,6 +17,13 @@ ul{
 }
 
 li{
+    display: flex;
+    flex-direction : column;
 
+}
+
+img{
+    width: 400px;
+    height: 500px;
 }
 `
