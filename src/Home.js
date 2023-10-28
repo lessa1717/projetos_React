@@ -9,8 +9,11 @@ import { useState, useEffect } from "react";
 function Home() {
 
     const [movies, setMovies] = useState([])
+
+
     useEffect(() => {
-        
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}&language=en-US&page=1`)
+
     }, []) 
 
 
