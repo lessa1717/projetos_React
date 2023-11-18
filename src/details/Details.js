@@ -1,4 +1,4 @@
-import { Container } from "./styles";
+import { Container } from "./style.js";
 
 function Details(){
     return(
@@ -11,4 +11,4 @@ function Details(){
 }
 
 
-export default Details();
+export default Details;
