@@ -52,7 +52,7 @@ import { useParams } from "react-router-dom";
 import { APIKEY } from "../config/key";
 
 function Details() {
-
+    const img_path = 'https://image.tmdb.org/t/p/w500/'
     const {id} = useParams()
     // o useParams esta transformando o id em uma referencia
     console.log(id)
@@ -72,6 +72,7 @@ function Details() {
                 title: data.title,
                 overview: data.overview,
                 releaseDate: data.release_date,
+                poster: data.poster_path
 
             }
             setMovie(movie);
@@ -81,8 +82,13 @@ function Details() {
     
     return (
         <div>
-            <h1>Detalhes do filme</h1>
-            <p>{movie.title}</p>
+           
+            <img src={`${img_path}${movie.poster}`} alt={movie.title}/>
+            <h1>{movie.title}</h1>
+            
+            <span>Sinopse: {movie.overview}</span>
+            <span>Data de lançamento: {movie.releaseDate}</span>
+            <button>Retornar ao catálogo</button>
         </div>
     )
 }
