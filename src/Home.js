@@ -5,6 +5,8 @@ import { MovieList } from "./style";
 import { Movie } from "./style";
 import { APIKEY } from "./config/key";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Details from "./details/Details";
 
 function Home() {
 
@@ -13,9 +15,10 @@ function Home() {
 
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}&language=en-US&page=1`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}&language=pt-br-US&page=1`)
         .then(response => response.json())
         .then(data => {
+            console.log(data.results);
             setMovies(data.results)
         })
     }, []) 
@@ -45,10 +48,11 @@ function Home() {
                 {
                     movies.map(movie => {
                         return (
-                            <Movie>
-                                <a href="#">
-                                    <img src={`${img_path}${movie.poster_path}`} alt={movie.title} />
-                                </a>
+                            <Movie key={movie.id}>
+                              <Link to={`/details/${movie.id}`}>
+
+                                    <img src={`${img_path}${movie.poster_path}`} alt={movie.title}/>
+                                    </Link>
                                 <span>{movie.title}</span>
                             </Movie>
 
