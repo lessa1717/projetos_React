@@ -73,7 +73,11 @@ function Details() {
                     title: data.title,
                     overview: data.overview,
                     releaseDate: data.release_date,
-                    poster: data.poster_path
+                    poster: data.poster_path,
+                    vote_average:data.vote_average,
+                    vote_count: data.vote_count,
+                    filme: `${img_path}${data.poster_path}`
+
 
                 }
                 setMovie(movie);
@@ -90,6 +94,8 @@ function Details() {
 
                     <span className="sinopse">Sinopse: {movie.overview}</span>
                     <span className="release">Data de lançamento: {movie.releaseDate}
+                    <span>Nota: {movie.vote_average}</span>
+                    <span>Likes: {movie.vote_count}</span>
                     <Link to="/"><button className="botaoInfo">Retornar ao catálogo</button></Link>
                     </span>
                 </div>

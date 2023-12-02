@@ -54,6 +54,7 @@ function Home() {
                                     <img src={`${img_path}${movie.poster_path}`} alt={movie.title}/>
                                     </Link>
                                 <span>{movie.title}</span>
+                               
                             </Movie>
 
                         )
