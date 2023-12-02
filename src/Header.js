@@ -1,12 +1,12 @@
-
+import { Container } from "./style";
 
 function Header (){
     return(
-        <div>
+        <Container>
            <div className="header">
-            <h1>CineHouse</h1>
+         <img className="logoCine" src = "./imagens/logo.png" alt="logo"/>
             </div>     
-        </div>
+        </Container>
     )
 }
 
